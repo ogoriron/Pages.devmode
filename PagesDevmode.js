@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: "gh-assets", href: "https://github.githubassets.com", crossorigin: "anonymous" },
         { id: "gh-main", href: "https://github.com" }
       ].forEach(linkTag => (
-         fetch(linkTag.href + "/favicon.ico?t=" + Date.now(), { mode: "no-cors" }), // for debug
+        // fetch(linkTag.href + "/favicon.ico?t=" + Date.now(), { mode: "no-cors" }), // for debug
         document.getElementById(linkTag.id)?.remove(), 
         document.head.append(
           Object.assign(document.createElement("link"), { rel: "preconnect", ...linkTag })
