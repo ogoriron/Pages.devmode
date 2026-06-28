@@ -6,7 +6,7 @@ Make editing your GitHub Pages easier. Press the dot key twice to edit the GitHu
 By modifying this script, it can be applied to any website.
 
 **Installation**<br>
-1. Please embed the JavaScript into any part of your GitHub Pages site.
+1. Please embed the JavaScript into any part of your GitHub Pages site. The first <script> tag is for Jekyll, so it is unnecessary if you are not using Jekyll.
 
 ```
 <script id="page-path" type="application/json">{{ page.path | jsonify }}</script>
@@ -23,7 +23,7 @@ By modifying this script, it can be applied to any website.
 改造することでどんなサイトでも使えます。
 
 **インストール方法**<br>
-1. Javascrptをお使いのGitHub Pagesのどこかに組み込んでください。
+1. Javascrptをお使いのGitHub Pagesのどこかに組み込んでください。最初のscriptタグはJekyll用なのでJelyllを使わないなら不要。
 
 ```
 <script id="page-path" type="application/json">{{ page.path | jsonify }}</script>
