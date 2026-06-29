@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const REPO = "username/repository"; // Username & Repository
+  const REPO = "username/repository"; // GitHub username/repository
   const REPO_BASE = "https://github.com/" + REPO + "/edit/main/";
   const PAGE_PATH = JSON.parse(document.getElementById("page-path")?.textContent || '""');
-  // jekyll で PAGE_PATH を代入するので、しないなら何かロジックが必要
+  // In the standard code, the destination for when ".." is pressed is inserted by Jekyll.
+  // 標準のコードでは .. と押した場合の移動先をJekyllで挿入している
 
   const CONFIRM_TEXT = navigator.language.startsWith("ja")
     ? "編集しますか？" : "Edit this page?";
   const go = (path, isSkip) => location.href = (isSkip ? "" : REPO_BASE) + path;
   const skipBase = true;
 
-  const commands = {
+  const commands = { // Modifiable / 改変可能
     "..":  () => confirm(CONFIRM_TEXT) && go(PAGE_PATH),
     "css":() => go("assets/main.scss"),
     "js": () => go("_includes/social.html"),
     "po":() => go("_posts"),
     "tag":() => go("_tags"),
+    "dev":() => go("https://github.com/ogoriron/Pages.devmode", skipBase),
   };
 
   const isTyping = () => {
