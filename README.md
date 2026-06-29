@@ -15,6 +15,13 @@ By modifying this script, it can be applied to any website.
 
 2. Specify the variables within the script.
 
+| Key | Description |
+| :--- | :--- |
+| REPO | GitHub username/repository |
+| PAGE_PATH | In the standard code, the destination for when ".." is pressed is inserted by Jekyll. |
+| commands | "css" () => go("assets/main.scss") <br>※ Press "css" to redirect to the specified URL under REPO_BASE.  |
+| commands | "dev" () => go("https://anysite.com", skipBase) <br>※ Pass skipBase if REPO_BASE is not used in the URL. |
+
 ----
 
 ### GitHubページからホットキーで即編集
@@ -31,3 +38,10 @@ By modifying this script, it can be applied to any website.
 ```
 
 2. スクリプト内の変数を指定してください。
+
+| キー | 説明 |
+| :--- | :--- |
+| REPO | "username/repository" |
+| PAGE_PATH | 標準のコードでは .. と押した場合の移動先をJekyllで挿入している |
+| commands | "css" () => go("assets/main.scss") | <br>※cssと押すとREPO_BASE以下の指定文字列のURLに飛ぶ | 
+| commands | "dev" () => go("https://anysite.com", skipBase) <br>※URLにREPO_BASE を使わないなら skipBaseを渡す| 
